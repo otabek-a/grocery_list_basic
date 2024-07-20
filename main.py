@@ -16,6 +16,18 @@ def get_prices(data):
         price = row.split(',')[2]
         prices.append(float(price[1:]))
     return prices
+
+def get_products(data):
+    """
+    Retrieves products column in to a list
+
+    Args:
+        data (str): CSV format data
+
+    Returns:
+        list: list of products
+    """
+   
         
 
 # Read data from file
