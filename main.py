@@ -27,11 +27,19 @@ def get_products(data):
     Returns:
         list: list of products
     """
+    data = data.split('\n')[1:]
+    products = []
+    for row in data:
+        product = row.split(',')[0]
+        products.append(product)
+    return products
    
         
 
 # Read data from file
 f = open("data.csv")
 data = f.read()
+products = get_products(data)
+print(products)
 
-print(get_prices(data))
+# print(get_prices(data))
