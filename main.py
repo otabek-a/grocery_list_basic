@@ -34,12 +34,21 @@ def get_products(data):
         products.append(product)
     return products
    
-        
+def get_expensive(prices):
+    """
+    Finds the most expensive product of index
+
+    Args:
+        prices (list): list of prices
+
+    Returns:
+        int: index of most expensive product
+    """
 
 # Read data from file
 f = open("data.csv")
 data = f.read()
 products = get_products(data)
-print(products)
+# print(products)
 
-# print(get_prices(data))
+print(get_prices(data))
