@@ -44,11 +44,23 @@ def get_expensive(prices):
     Returns:
         int: index of most expensive product
     """
+    idx = 0 # Most expensive product's index
+    expensive = prices[idx]
+    for i in range(len(prices)):
+        if prices[i] > expensive:
+            expensive = prices[i]
+            idx = i
+    return idx
+    
 
 # Read data from file
 f = open("data.csv")
 data = f.read()
 products = get_products(data)
 # print(products)
-
-print(get_prices(data))
+prices = get_prices(data)
+# Get most expensive product index
+idx = get_expensive(prices)
+print(prices[idx])
+# Print most expensive product
+print(f'Most expensive product: {products[idx]}')
